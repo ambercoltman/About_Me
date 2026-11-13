@@ -64,7 +64,7 @@ const message = [
     "Secure your passwords, honee."
 ];
 
-const position = [-130, -20, 100, -60, 40];
+const positions = [-130, -20, 100, -60, 40];
 let hops = 0;
 
 frog.style.transform ="translateX(-50%)";
@@ -89,7 +89,8 @@ const keysBox = document.getElementById("keys");
 
 //note sounds starting from middle c
 const notes = [
-    261.63, 277.18, 293.66, 311.13, 329.63, 329.23, 369.99, 392.0, 440.0, 466.16, 493.88
+    261.63, 277.18, 293.66, 311.13, 329.63, 329.23, 349.23,
+    369.99, 392.0, 415.3, 440.0, 466.16, 493.88
 ];
 
 // w = white keys, b = black keys
@@ -100,6 +101,9 @@ const keyMap ={
     a:0, w:1, s:2, e:3, d:4, f:5,
     t:6, g:7, y:8, h:9, u:10, j:11
 };
+
+const keyEls = [];
+let audio = null;
 
 //build the keys
 layout.forEach((type, i) =>{
@@ -125,7 +129,7 @@ function playNote(i){
         const gain = audio.createGain();
 
         osc.type = "triangle";
-        osc.frequency.value = note[i];
+        osc.frequency.value = notes[i];
 
         gain.gain.setValueAtTime(0.3, audio.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 1.2);
