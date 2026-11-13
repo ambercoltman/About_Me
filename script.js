@@ -126,7 +126,7 @@ function playNote(i){
         audio = audio || new (window.AudioContext || window.webkitAudioContext)();
 
         //resumes audio if browser has suspended it
-        if(audio,state ==="suspended"){
+        if(audio.state ==="suspended"){
             audio.resume();
         }
 
