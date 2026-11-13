@@ -89,7 +89,7 @@ const keysBox = document.getElementById("keys");
 
 //note sounds starting from middle c
 const notes = [
-    261.63, 277.18, 293.66, 311.13, 329.63, 329.23, 349.23,
+    261.63, 277.18, 293.66, 311.13, 329.23, 349.23,
     369.99, 392.0, 415.3, 440.0, 466.16, 493.88
 ];
 
@@ -125,6 +125,11 @@ function playNote(i){
     try{
         audio = audio || new (window.AudioContext || window.webkitAudioContext)();
 
+        //resumes audio if browser has suspended it
+        if(audio,state ==="suspended"){
+            audio.resume();
+        }
+
         const osc = audio.createOscillator();
         const gain = audio.createGain();
 
@@ -134,12 +139,18 @@ function playNote(i){
         gain.gain.setValueAtTime(0.3, audio.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 1.2);
 
+        //connect sound to speakers
         osc.connect(gain);
-        gain.connect(audio.currentTime + 1.2);
-    }catch(error){
+        gain.connect(audio.destination);
 
+        //start and stop sound
+        osc.start();
+        osc.stop(audio.currentTime + 1.2);
+    }catch(error){
+        console.error("Piano sound error:", error);
     }
 
+    //lights up keys
     const el = keyEls[i];
 
     if(el){
