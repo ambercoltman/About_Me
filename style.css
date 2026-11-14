@@ -651,3 +651,97 @@ footer {
     display: none;
   }
 }
+
+/*clickable cards*/
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--hot);
+  transition: 0.25s;
+}
+
+.card-link:hover .more {
+  transform: translateX(6px);
+}
+
+/*sub pages*/
+
+.page-top {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 0;
+}
+
+.recipes {
+  display: grid;
+  gap: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.recipe {
+  padding: 0;
+  overflow: hidden;
+}
+
+.recipe summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.recipe summary::-webkit-details-marker {
+  display: none;
+}
+
+.recipe summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 1.8rem;
+  color: var(--hot);
+  transition: transform 0.3s;
+}
+
+.recipe[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.recipe .e {
+  font-size: 2.2rem;
+}
+
+.recipe h3 {
+  font-size: 1.4rem;
+  color: var(--hot);
+}
+
+.recipe small {
+  color: var(--soft);
+}
+
+.recipe .inside {
+  padding: 0 22px 22px;
+}
+
+.recipe h4 {
+  margin: 16px 0 4px;
+  color: var(--deep);
+}
+
+.recipe ol {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: var(--soft);
+}
+

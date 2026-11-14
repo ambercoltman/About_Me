@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Amber's Recipe Book</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Quicksand:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="flies" aria-hidden="true"></div>
+    <button id="theme" aria-label="Toggle day and night">🌙</button>
+
+    <main>
+
+        <section class="page-top">
+            <a class="btn" href="index.html">← Back Home</a>
+            <h1 class="script reveal" style="margin-top: 32px; font-size: clamp(2.4rem, 8vw, 4.5rem); color: var(--deep);">My Recipe Book</h1>
+            <p class="sub reveal" style="margin-top: 12px;">Click a recipe to open it</p>
+        </section>
+
+        <section style="padding-top: 24px;">
+            <div class="recipes">
+
+                <details class="card recipe reveal">
+                    <summary>
+                        <span class="e">🍪</span>
+                        <div>
+                            <h3>Chocolate Chip Cookies</h3>
+                            <small>Makes about 24 • 25 minutes</small>
+                        </div>
+                    </summary>
+                    <div class="inside">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>225g soft butter</li>
+                            <li>150g white sugar</li>
+                            <li>165g brown sugar</li>
+                            <li>2 eggs</li>
+                            <li>2 tsp vanilla essence</li>
+                            <li>250g cake flour</li>
+                            <li>1 tsp bicarbonate of sode</li>
+                            <li>1 tsp salt</li>
+                            <li>300g chocolate chips</li>
+                        </ul>
+                        <h4>Method</h4>
+                        <ol>
+                            <li>Heat oven to 180°C</li>
+                            <li>Cream butter and both sugars together until fluffy</li>
+                            <li>Beat in eggs and vanilla</li>
+                            <li>Mix in flour, bicard, and salt, then fold in chocolate chips</li>
+                            <li>Scoop onto a lined baking tray and bake for 10 to 12 minutes</li>
+                        </ol>
+                    </div>
+                </details>
+
+                <div class="card reveal" style="text-align: center; border-style: dashed;">
+                    <span style="font-size: 2.2rem;">🥐</span>
+                        <h3 style="color: var(--hot);">Someday list: Beignets</h3>
+                        <p style="margin: 6px 0 0; color: var(--soft);">Coming soon, bayou style!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+     <footer>
+        Made with love, a little magic, and a wholeee lot of green🥰💚🩷
+    </footer>
+
+    <script src="subpages.js"></script>  
+</body>
+</html>
